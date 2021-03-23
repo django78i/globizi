@@ -1,0 +1,22 @@
+<ion-content>
+	<div class="sec">
+	</div>
+	<div class="slideContent">
+		<h2>Discussions</h2>
+		<ion-searchbar (ionChange)="change($event)"></ion-searchbar>
+		<ion-list>
+			<ion-item *ngFor="let room of roomsObs$|async" routerLink="conv-page">
+				<ion-avatar slot="start">
+					<img src="../../../assets/image/fogg-918.png">
+				</ion-avatar>
+				<ion-label>
+					<h2>{{room.name}}</h2>
+					<p>{{room.lastMsg}}</p>
+				</ion-label>
+			</ion-item>
+		</ion-list>
+	</div>
+</ion-content>
+<ion-footer>
+	<ion-input [(ngModel)]="custom" (click)="send()"></ion-input>
+</ion-footer>

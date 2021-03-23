@@ -1,0 +1,46 @@
+<ion-content>
+	<div class="sec"></div>
+	<ion-slides pager="true" [options]="slideOpts" class="slider">
+		<ion-slide>
+			<div class="slideContent">
+				<div class="text">
+					<h1>Bienvenue</h1>
+					<p>Bonjour ! Bienvenue sur Globeasy, l’application qui va révolutionner vos voyages. Notre service
+						facilitera la préparation de vos aventures et va vous permettre d’échanger avec des millions de
+						voyageurs autour du monde.
+					</p>
+				</div>
+				<img class="image" src="../../assets/image/frameMap.svg" alt="">
+			</div>
+		</ion-slide>
+	</ion-slides>
+	<div class="butt">
+		<ion-button shape="round" fill="outline" expand="full" (click)="decoll()">
+			<ion-thumbnail slot="start">
+
+			</ion-thumbnail>
+			Décollage
+			<ion-thumbnail slot="end">
+				<svg width="17" height="12" viewBox="0 0 17 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M11.7751 7.13129H13.7023H14.3961C14.4796 7.13129 14.5117 7.13129 14.5117 7.13129C14.5117 7.13129 15.3597 7.01969 16.1905 6.80306C17.0192 6.58643 17 6.00219 17 6.00219C17 6.00219 17.0192 5.41794 16.1905 5.20131C15.3619 4.98468 14.5139 4.87309 14.5139 4.87309C14.5139 4.87309 14.4818 4.87309 14.3983 4.87309H13.7045H11.7773L7.95287 0H6.12847L7.8351 3.31291L8.19698 4.8709H6.39827C6.39827 4.8709 5.2184 4.73961 3.68522 5.27571L2.06424 3.58206H0.830833L1.394 5.78993H0.451819L0 6.00219L0.45396 6.21007H1.39614L0.832975 8.41794H2.06638L3.68736 6.72429C5.22055 7.26039 6.39827 7.1291 6.39827 7.1291H8.19698L7.8351 8.68709L6.12847 12H7.95287L11.7751 7.13129Z"
+						fill="#4A4A4A" />
+				</svg>
+
+			</ion-thumbnail>
+		</ion-button>
+		<ion-button shape="round" fill="outline" expand="full" (click)="logout()">
+			<ion-thumbnail slot="start">
+
+			</ion-thumbnail>
+			Déconnexion
+			<ion-thumbnail slot="end">
+				<svg width="17" height="12" viewBox="0 0 17 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M11.7751 7.13129H13.7023H14.3961C14.4796 7.13129 14.5117 7.13129 14.5117 7.13129C14.5117 7.13129 15.3597 7.01969 16.1905 6.80306C17.0192 6.58643 17 6.00219 17 6.00219C17 6.00219 17.0192 5.41794 16.1905 5.20131C15.3619 4.98468 14.5139 4.87309 14.5139 4.87309C14.5139 4.87309 14.4818 4.87309 14.3983 4.87309H13.7045H11.7773L7.95287 0H6.12847L7.8351 3.31291L8.19698 4.8709H6.39827C6.39827 4.8709 5.2184 4.73961 3.68522 5.27571L2.06424 3.58206H0.830833L1.394 5.78993H0.451819L0 6.00219L0.45396 6.21007H1.39614L0.832975 8.41794H2.06638L3.68736 6.72429C5.22055 7.26039 6.39827 7.1291 6.39827 7.1291H8.19698L7.8351 8.68709L6.12847 12H7.95287L11.7751 7.13129Z"
+						fill="#4A4A4A" />
+				</svg>
+			</ion-thumbnail>
+		</ion-button>
+	</div>
+</ion-content>

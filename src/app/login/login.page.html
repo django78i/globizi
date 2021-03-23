@@ -1,0 +1,55 @@
+<!-- <ion-content [fullscreen]="true"> -->
+<ion-content>
+    <div class="sec"></div>
+    <ion-slides pager="true" [options]="slideOpts" class="slider">
+        <ion-slide>
+            <div class="slideContent">
+                <h1>Rejoignez l'aventure</h1>
+                <p>Préparez vos futurs voyages en intégrant la première application créée par et pour des voyageurs
+                    🗺️
+                    (Et
+                    tout ça gratuitement)
+                </p>
+                <img src="../../assets/image/map.svg" alt="">
+            </div>
+        </ion-slide>
+        <ion-slide>
+            <div class="slideContent" style="background: linear-gradient(180deg, #F6AF98 0%, #F498BB 100%);">
+                <h1>Rejoignez l'aventure</h1>
+                <p>Préparez vos futurs voyages en intégrant la première application créée par et pour des voyageurs
+                    🗺️
+                    (Et
+                    tout ça gratuitement)
+                </p>
+                <img src="../../assets/image/community.svg" alt="">
+            </div>
+        </ion-slide>
+        <ion-slide>
+            <div class="slideContent"
+                style="background : radial-gradient(68.73% 43.42% at 50% 56.58%, #2A4895 30.73%, #0C1838 100%);">
+                <h1>Rejoignez l'aventure</h1>
+                <p>Préparez vos futurs voyages en intégrant la première application créée par et pour des voyageurs
+                    🗺️
+                    (Et
+                    tout ça gratuitement)
+                </p>
+                <img src="../../assets/image/earth.svg" alt="">
+            </div>
+        </ion-slide>
+    </ion-slides>
+    <div class="butt">
+        <ion-button shape="round" fill="outline" expand="full" (click)="signInWithGoogle()"
+            (click)="signInWithGoogle()">
+            <ion-thumbnail slot="start">
+                <ion-img [src]="google"></ion-img>
+            </ion-thumbnail>
+            S'inscrire avec Google
+            <ion-thumbnail slot="end">
+                <ion-img [src]="fleche" style="height: 10px;width: 6.6px;"></ion-img>
+            </ion-thumbnail>
+
+            <!-- <img slot="end" src="../../assets/icon/fleche.svg" alt=""> -->
+        </ion-button>
+    </div>
+</ion-content>
+<!-- </ion-content> -->

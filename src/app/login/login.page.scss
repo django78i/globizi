@@ -1,0 +1,45 @@
+ion-slides {
+  height: 75%;
+  transform: translateY(-30px);
+}
+
+ion-button {
+  background: white;
+  border-radius: 30px;
+  position: absolute;
+  bottom: -3px;
+  z-index: 10;
+}
+
+.slideContent {
+  background: linear-gradient(180deg, #5ed996 0%, #2acfa8 100%);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-radius: 30px;
+  color: white;
+}
+
+.sec {
+  height: 50px;
+  background: linear-gradient(
+    192.04deg,
+    #25cae5 6.05%,
+    #4c71e5 65.21%,
+    #7b06e5 100%
+  );
+}
+
+.butt {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.my-custom-class {
+  --background: #222;
+  --spinner-color: #fff;
+
+  color: #fff;
+}

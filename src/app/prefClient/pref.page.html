@@ -1,0 +1,85 @@
+<ion-content>
+	<div class="sec"></div>
+
+	<mat-horizontal-stepper linear #stepper>
+		<mat-step [stepControl]="firstFormGroup">
+			<ng-template matStepLabel>1</ng-template>
+			<p>Pour commencer, parlez-nous de vos centres d’intérêts pendant vos voyages.</p>
+			<mat-accordion>
+				<mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)">
+					<mat-expansion-panel-header>
+						<mat-panel-title>Voyage </mat-panel-title>
+					</mat-expansion-panel-header>
+
+					<ion-slides pager="true" [options]="slideOpts" class="slider" pager="false">
+						<ion-slide *ngFor="let photo of photos; let i = index" class="glisse">
+							<ion-item (click)="select(i)">
+								<ion-radio slot="start" value="griff" id="sad"></ion-radio>
+								<label for="sad">
+									<img #clicker src="//placekitten.com/150/150" alt="I'm sad" />
+								</label>
+							</ion-item>
+						</ion-slide>
+					</ion-slides>
+
+				</mat-expansion-panel>
+				<mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)">
+					<mat-expansion-panel-header>
+						<mat-panel-title>Gastronomie </mat-panel-title>
+					</mat-expansion-panel-header>
+					<p>I'm visible because I am open</p>
+				</mat-expansion-panel>
+				<mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)">
+					<mat-expansion-panel-header>
+						<mat-panel-title>Culture </mat-panel-title>
+					</mat-expansion-panel-header>
+					<p>I'm visible because I am open</p>
+				</mat-expansion-panel>
+				<mat-expansion-panel [expanded]="step === 3" (opened)="setStep(3)">
+					<mat-expansion-panel-header>
+						<mat-panel-title>Activités </mat-panel-title>
+					</mat-expansion-panel-header>
+					<p>I'm visible because I am open</p>
+				</mat-expansion-panel>
+				<mat-expansion-panel [expanded]="step === 4" (opened)="setStep(4)">
+					<mat-expansion-panel-header>
+						<mat-panel-title>Shopping </mat-panel-title>
+					</mat-expansion-panel-header>
+					<p>I'm visible because I am open</p>
+				</mat-expansion-panel>
+
+			</mat-accordion>
+			<div class="bottom">
+				<button class="bouton typSec" matStepperNext>Suivant
+					<img src="../../assets/icon/fleche.svg" alt=""></button>
+			</div>
+		</mat-step>
+		<mat-step [stepControl]="secondFormGroup" [optional]="isOptional">
+			<ng-template matStepLabel>2</ng-template>
+			<p style="margin-bottom: 120px;">Ensuite, parlez-nous de votre prochaine destination, ou bien d’un projet de
+				voyage.</p>
+			<ion-item style="margin-bottom: 100px;">
+				<ion-label>MM JJ AA</ion-label>
+				<ion-datetime displayFormat="MM DD YY" placeholder="Choisissez une date"></ion-datetime>
+			</ion-item>
+			<div class="bottom">
+				<button class="bouton typSec" matStepperPrevious>Retour
+					<img src="../../assets/icon/fleche.svg" alt=""></button>
+				<button class="bouton typSec" matStepperNext>Suivant
+					<img src="../../assets/icon/fleche.svg" alt=""></button>
+			</div>
+
+		</mat-step>
+		<mat-step>
+			<ng-template matStepLabel>3</ng-template>
+			<p>Et enfin, connaissez-vous vos dates de départ ?</p>
+			<div>
+				<div class="bottom">
+					<button class="bouton typSec" (click)="valider()">Suivant
+						<img src="../../assets/icon/fleche.svg" alt=""></button>
+				</div>
+			</div>
+		</mat-step>
+
+	</mat-horizontal-stepper>
+</ion-content>

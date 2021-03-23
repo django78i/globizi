@@ -1,0 +1,39 @@
+<ion-content>
+  <div class="sec">
+    <div class="direction">
+      <div class="voy" routerLink="/tabs/voyage/">
+        <img src="../../../../assets/icon/capt.unUse.svg" alt="">
+      </div>
+      <div class="trait">
+        <svg width="2" height="35" viewBox="0 0 2 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="1" y1="4.37114e-08" x2="-1" y2="35" stroke="#DADADA" stroke-width="2" />
+        </svg>
+      </div>
+      <div class="map">
+        <img src="../../../../assets/icon/mapUse.svg" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="slideContent">
+    <ion-searchbar [(ngModel)]="autocomplete.input" (ngModelChange)="updateSearchResults()" placeholder="Search for a place"
+      class="search"></ion-searchbar>
+    <ion-list [hidden]="show == true">
+      <ion-item *ngFor="let item of autocompleteItems" tappable (click)="selectSearchResult(item)">
+        {{ item.description }}
+      </ion-item>
+    </ion-list>
+    <agm-map [latitude]="latitude" [longitude]="longitude" (mapClick)="onMapClicked($event)">
+      <agm-marker *ngIf="marker" [latitude]="marker.latitude" [longitude]="marker.longitude"
+        [markerDraggable]="marker.draggable" (markerClick)="presentModal(marker)" [iconUrl]="marker.iconUrl">
+        <agm-info-window style="display: flex !important;flex-direction: column !important;">
+          <p><strong>{{lieux.name}}</strong></p>
+          <p><strong>{{lieux.rating}}</strong></p>
+          <div class="photo" style="display: flex;gap: 5px;">
+            <img [src]="photo" *ngFor="let photo of tof" alt="" style="height: 50px;width: 50px;">
+          </div>
+        </agm-info-window>
+      </agm-marker>
+    </agm-map>
+
+  </div>
+</ion-content>
