@@ -13,8 +13,8 @@
           <img src="../../../../assets/image/fogg-918.png">
         </ion-avatar>
         <ion-label>
-          <h2>User</h2>
-          <p>Hier</p>
+          <h2>{{userID}}</h2>
+          <p>Hier à 12:54</p>
         </ion-label>
       </ion-item>
     </ion-title>
@@ -22,5 +22,39 @@
 </ion-header>
 
 <ion-content>
-
+<div>
+  <ion-item lines ="none " *ngFor="let message of messagesObs$|async">
+    <ion-avatar *ngIf="message.userId != userID"  slot="start">
+      <img src="../../../../assets/image/fogg-918.png">
+    </ion-avatar>
+    <ion-badge text-wrap *ngIf="message.userId == userID" slot ="end" color="medium" >{{message.text}} 
+      <ion-icon color="primary" name="checkmark-done-outline"></ion-icon>
+      <ion-note color="medium">{{message.date | date :'h:m'}}</ion-note>
+    </ion-badge>
+    <ion-badge text-wrap *ngIf="message.userId != userID" slot ="start" color="secondary" >{{message.text}}
+      <ion-note  color="medium">{{message.date | date :'h:m'}}</ion-note>
+    </ion-badge>
+    
+  </ion-item>
+</div>
 </ion-content>
+
+<ion-footer> 
+  <ion-toolbar color="light">
+      <ion-row align-items-center no-padding>
+        <ion-col size="10">
+          <ion-input  autosize maRows="3" [(ngModel)]="messageText"  class="message-input">
+              <ion-button shape="round"  slot="end" color="light" > 
+                <ion-note>suggerez <br> un lieu ou un profil</ion-note>
+                <ion-icon slot="icon-only" name="location-outline"> </ion-icon>
+              </ion-button>
+        </ion-input>
+        </ion-col>
+        <ion-col size="2">
+          <ion-button expand="block" fill="clear" color="primary" class="msg-btn" (click)="sendMessage()">
+            <ion-icon slot="icon-only" name="send"> </ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+  </ion-toolbar>
+</ion-footer>

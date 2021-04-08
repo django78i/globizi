@@ -3,6 +3,11 @@
 	</div>
 	<div class="slideContent">
 		<h2>Discussions</h2>
+		<ion-buttons slot="end">
+			<ion-button>
+			  <ion-icon slot="icon-only" name="create"></ion-icon>
+			</ion-button>
+		</ion-buttons>
 		<ion-searchbar (ionChange)="change($event)"></ion-searchbar>
 		<ion-list>
 			<ion-item *ngFor="let room of roomsObs$|async" routerLink="conv-page">
@@ -10,8 +15,15 @@
 					<img src="../../../assets/image/fogg-918.png">
 				</ion-avatar>
 				<ion-label>
-					<h2>{{room.name}}</h2>
-					<p>{{room.lastMsg}}</p>
+					<div class="flex_box">
+							<h3>{{room.name}}</h3>
+							<ion-note slot="end">Hier à 12:54</ion-note>
+						  </div>
+						<ion-label class="ion-text-right" slot="end">
+							<p>&nbsp;</p>
+						</ion-label>
+						{{room.lastMsg}} 
+						<ion-badge color="success" slot="end">1</ion-badge>
 				</ion-label>
 			</ion-item>
 		</ion-list>
