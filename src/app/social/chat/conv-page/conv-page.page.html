@@ -33,8 +33,7 @@
     </ion-badge>
     <ion-badge text-wrap *ngIf="message.userId != userID" slot ="start" color="secondary" >{{message.text}}
       <ion-note  color="medium">{{message.date | date :'h:m'}}</ion-note>
-    </ion-badge>
-    
+    </ion-badge> 
   </ion-item>
 </div>
 </ion-content>
@@ -42,12 +41,10 @@
 <ion-footer> 
   <ion-toolbar color="light">
       <ion-row align-items-center no-padding>
+        
         <ion-col size="10">
-          <ion-input  autosize maRows="3" [(ngModel)]="messageText"  class="message-input">
-              <ion-button shape="round"  slot="end" color="light" > 
-                <ion-note>suggerez <br> un lieu ou un profil</ion-note>
-                <ion-icon class="ion-color" slot="icon-only" name="location-outline"> </ion-icon>
-              </ion-button>
+          <ion-input  autosize type="text" maRows="3" [(ngModel)]="messageText"  class="message-input">
+            <ion-button id="btn-suggerez-lieu" shape="round" color="light"  slot="start" > <ion-icon id="localisation"  slot="icon-only" name="location-outline"> </ion-icon> suggerez un lieu</ion-button>
         </ion-input>
         </ion-col>
         <ion-col size="2">

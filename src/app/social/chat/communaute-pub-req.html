@@ -1,0 +1,49 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-button slot="start"  shape="round" color="secondary">
+            <ion-label>Annuler </ion-label>
+        </ion-button>
+        <div slot="end">
+            <ion-button color="success" slot="end" shape="round" (click)="sendComment()" > Envoyer </ion-button>
+        </div>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+        <ion-item>
+            <ion-label>
+                <ion-avatar slot="start">
+                <img src="../../../assets/image/fogg-918.png">
+            </ion-avatar>
+            </ion-label>
+            <ion-textarea [(ngModel)]="messageText"  placeholder="Posez votre question à la communauté..." clearOnEdit="true"></ion-textarea>
+          </ion-item>  
+</ion-content>
+
+<ion-footer>
+    <div>
+        <i> choisissez au moins un sujet ou une destination pour que la communauté puisse répondre à votre Request</i>
+    </div> 
+    <div> 
+        <ion-toolbar> 
+            <ion-item>
+                <ion-label><i> Sujet</i></ion-label>
+                <ion-buttons>
+                    <ion-button> <ion-badge color="light" slot="start">Départ</ion-badge></ion-button>
+                    <ion-button> <ion-badge color="light" slot="start">COVID</ion-badge></ion-button>
+                    <ion-button> <ion-badge color="light" slot="start">Shopping</ion-badge></ion-button>
+                    <ion-button> <ion-badge color="light" slot="start">Divers</ion-badge></ion-button>
+                </ion-buttons>
+                
+              </ion-item>
+        </ion-toolbar>
+    </div>
+    <div>
+        <ion-toolbar>
+            
+            <ion-button shape="round" color="light"  slot="start" > <ion-icon  slot="icon-only" name="location-outline"> </ion-icon></ion-button>
+            <ion-label >Dubai, Emirates-Arabes-Unis</ion-label>
+            <ion-button shape="round" color="light"  slot="end" ><ion-icon name="camera-outline"></ion-icon></ion-button>
+        </ion-toolbar>
+    </div>
+</ion-footer>
